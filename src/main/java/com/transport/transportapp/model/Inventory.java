@@ -6,31 +6,30 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "inventories")
 public class Inventory {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    @Column(name = "name")
+    private Long id;
+
+    @Column(name = "name", nullable = false)
     private String name;
-    @Column(name = "type")
-    private String type;
-    @Column(name = "description")
-    private String description;
-    @Column(name = "quantity")
-    private String quantity;
-    @Column(name = "price")
-    private String price;
 
-    public Inventory(String name2, String description2, boolean b) {
-    }
+    @Column(name = "quantity", nullable = false)
+    private Integer quantity;
 
-    public long getId() {
+    // Getters and setters for the fields
+    // ...
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -42,66 +41,11 @@ public class Inventory {
         this.name = name;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(String string) {
-        this.quantity = string;
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
-
-    public String getPrice() {
-        return price;
-    }
-
-    public void setPrice(String string) {
-        this.price = string;
-    }
-
-    public Object getCategory() {
-        return null;
-    }
-
-    public Object getImage() {
-        return null;
-    }
-
-    public Object getSubcategory() {
-        return null;
-    }
-
-    public void setImage(Object image) {
-
-    }
-
-    public void setCategory(Object category) {
-    }
-
-    public void setSubcategory(Object subcategory) {
-    }
-
-    public Object isPublished() {
-        return null;
-    }
-
-   // public void setPublished(Object published) {
-   // }
-
 }
-
