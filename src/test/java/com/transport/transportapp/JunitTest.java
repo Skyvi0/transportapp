@@ -10,6 +10,11 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
+import com.transport.transportapp.model.Inventory;
+import com.transport.transportapp.repository.InventoryService;
+
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -25,10 +30,9 @@ public class JunitTest {
     private JunitTest exampleService;
 
     @Test
-    public void testCreate() throws Exception {
-        mockMvc.perform(post("/inventory")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content("{\"name\":\"test\",\"description\":\"test\",\"quantity\":1,\"price\":1.0}"))
-                .andExpect(status().isOk());
+    public void test() throws Exception {
+        InventoryService inventoryService = mock(InventoryService.class);
+when(inventoryService.getInventoryById(1L)).thenReturn(new Inventory(1L, "Test Inventory", 10));
+
     }
 }
