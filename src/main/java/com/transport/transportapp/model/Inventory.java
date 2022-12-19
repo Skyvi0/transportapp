@@ -25,6 +25,9 @@ public class Inventory {
     // Getters and setters for the fields
     // ...
 
+    public Inventory(long l, String string, int i) {
+    }
+
     public Long getId() {
         return id;
     }
