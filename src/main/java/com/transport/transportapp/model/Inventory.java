@@ -23,6 +23,9 @@ public class Inventory {
     @Column(name = "price")
     private String price;
 
+    public Inventory(String name2, String description2, boolean b) {
+    }
+
     public long getId() {
         return id;
     }
@@ -92,6 +95,13 @@ public class Inventory {
 
     public void setSubcategory(Object subcategory) {
     }
+
+    public Object isPublished() {
+        return null;
+    }
+
+   // public void setPublished(Object published) {
+   // }
 
 }
 
