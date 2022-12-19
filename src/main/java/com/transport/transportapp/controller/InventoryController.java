@@ -59,7 +59,7 @@ public class InventoryController {
     public ResponseEntity<Inventory> createInventory(@RequestBody Inventory inventory) {
         try {
             Inventory _inventory = inventoryRepository
-                    .save(new Inventory());
+                    .save(new Inventory(null, null, false));
             return new ResponseEntity<>(_inventory, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
@@ -94,4 +94,30 @@ public class InventoryController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @DeleteMapping("/inventory")
+    public ResponseEntity<HttpStatus> deleteAllInventory() {
+        try {
+            inventoryRepository.deleteAll();
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+    }
+
+   /*  @GetMapping("/inventory/published")
+    public ResponseEntity<List<Inventory>> findByPublished() {
+        try {
+            List<Inventory> inventory = inventoryRepository.findByPublished(true);
+
+            if (inventory.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+            return new ResponseEntity<>(inventory, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }*/
+
 }
