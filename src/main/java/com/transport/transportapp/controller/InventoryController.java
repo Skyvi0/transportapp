@@ -13,111 +13,58 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.transport.transportapp.model.Inventory;
 import com.transport.transportapp.repository.InventoryRepository;
+import com.transport.transportapp.repository.InventoryService;
 
 
 
+@RestController
+@RequestMapping("/api/inventories")
 public class InventoryController {
 
+    private final InventoryService inventoryService;
+
     @Autowired
-    InventoryRepository inventoryRepository;
-
-    @GetMapping("/inventory")
-    public ResponseEntity<List<Inventory>> getAllInventory(@RequestParam(required = false) String name) {
-        try {
-            List<Inventory> inventory = new ArrayList<Inventory>();
-
-            if (name == null)
-                inventoryRepository.findAll().forEach(inventory::add);
-            else
-                inventoryRepository.findByNameContaining(name).forEach(inventory::add);
-
-            if (inventory.isEmpty()) {
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-            }
-
-            return new ResponseEntity<>(inventory, HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+    public InventoryController(InventoryService inventoryService) {
+        this.inventoryService = inventoryService;
     }
 
-    @GetMapping("/inventory/{id}")
-    public ResponseEntity<Inventory> getInventoryById(@PathVariable("id") long id) {
-        Optional<Inventory> inventoryData = inventoryRepository.findById(id);
-
-        if (inventoryData.isPresent()) {
-            return new ResponseEntity<>(inventoryData.get(), HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
-
-    @PostMapping("/inventory")
+    @PostMapping
     public ResponseEntity<Inventory> createInventory(@RequestBody Inventory inventory) {
-        try {
-            Inventory _inventory = inventoryRepository
-                    .save(new Inventory(null, null, false));
-            return new ResponseEntity<>(_inventory, HttpStatus.CREATED);
-        } catch (Exception e) {
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        Inventory createdInventory = inventoryService.createInventory(inventory);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdInventory);
     }
 
-    @PutMapping("/inventory/{id}")
-    public ResponseEntity<Inventory> updateInventory(@PathVariable("id") long id, @RequestBody Inventory inventory) {
-        Optional<Inventory> inventoryData = inventoryRepository.findById(id);
+    @PutMapping
+    public ResponseEntity<Inventory> updateInventory(@RequestBody Inventory inventory) {
+        Inventory updatedInventory = inventoryService.updateInventory(inventory);
+        return ResponseEntity.ok(updatedInventory);
+    }
 
-        if (inventoryData.isPresent()) {
-            Inventory _inventory = inventoryData.get();
-            _inventory.setName(inventory.getName());
-            _inventory.setDescription(inventory.getDescription());
-            _inventory.setPrice(inventory.getPrice());
-            _inventory.setQuantity(inventory.getQuantity());
-            _inventory.setImage(inventory.getImage());
-            _inventory.setCategory(inventory.getCategory());
-            _inventory.setSubcategory(inventory.getSubcategory());
-            return new ResponseEntity<>(inventoryRepository.save(_inventory), HttpStatus.OK);
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteInventory(@PathVariable Inventory id) {
+        inventoryService.deleteInventory(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Inventory>> getAllInventories() {
+        List<Inventory> inventories = inventoryService.getAllInventories();
+        return ResponseEntity.ok(inventories);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Inventory> getInventoryById(@PathVariable Long id) {
+        Inventory inventory = inventoryService.getInventoryById(id);
+        if (inventory != null) {
+            return ResponseEntity.ok(inventory);
         } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return ResponseEntity.notFound().build();
         }
     }
-
-    @DeleteMapping("/inventory/{id}")
-    public ResponseEntity<HttpStatus> deleteInventory(@PathVariable("id") long id) {
-        try {
-            inventoryRepository.deleteById(id);
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-
-    @DeleteMapping("/inventory")
-    public ResponseEntity<HttpStatus> deleteAllInventory() {
-        try {
-            inventoryRepository.deleteAll();
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-
-    }
-
-   /*  @GetMapping("/inventory/published")
-    public ResponseEntity<List<Inventory>> findByPublished() {
-        try {
-            List<Inventory> inventory = inventoryRepository.findByPublished(true);
-
-            if (inventory.isEmpty()) {
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-            }
-            return new ResponseEntity<>(inventory, HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }*/
-
 }
