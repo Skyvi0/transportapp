@@ -62,16 +62,16 @@ public class Inventory {
         return quantity;
     }
 
-    public void setQuantity(String quantity) {
-        this.quantity = quantity;
+    public void setQuantity(String string) {
+        this.quantity = string;
     }
 
     public String getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setPrice(String string) {
+        this.price = string;
     }
 
     public Object getCategory() {
