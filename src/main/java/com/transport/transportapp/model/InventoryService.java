@@ -1,4 +1,4 @@
-package com.transport.transportapp.repository;
+package com.transport.transportapp.model;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.transport.transportapp.model.Inventory;
+import com.transport.transportapp.repository.InventoryRepository;
 
 
 @Service

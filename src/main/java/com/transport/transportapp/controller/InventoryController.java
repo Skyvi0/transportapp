@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.transport.transportapp.model.Inventory;
-import com.transport.transportapp.repository.InventoryService;
+import com.transport.transportapp.model.InventoryService;
 
 
 
