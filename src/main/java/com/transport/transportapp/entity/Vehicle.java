@@ -2,15 +2,15 @@ package com.transport.transportapp.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "vehicles")
 public class Vehicle {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String type;
     private String model;
@@ -18,6 +18,8 @@ public class Vehicle {
     @ManyToOne
     private TransportCompany transportCompany;
 
+    public Vehicle() {
+    }
     public Vehicle(String string, String string2, int i, TransportCompany transportCompany2) {
     }
     // Getter- und Setter-Methoden für die Felder

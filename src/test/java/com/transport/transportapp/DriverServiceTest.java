@@ -84,9 +84,9 @@ class DriverServiceTest {
         driver.setLicenseNumber("123-456-789");
 
         driverService.deleteDriver(1L);
-
+        verify(driverRepository).deleteById(1L);
+        
         // We can't verify that the delete operation was successful, since the method returns void
         // Instead, we can just make sure that the repository's deleteById method was called with the correct ID
-        verify(driverRepository).deleteById(1L);
     }
 }
