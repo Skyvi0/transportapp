@@ -1,172 +1,188 @@
-2022-12-23 14:42:51 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "drop table if exists [*]user CASCADE "; erwartet "identifier"
-Syntax error in SQL statement "drop table if exists [*]user CASCADE "; expected "identifier"; SQL statement:
-drop table if exists user CASCADE  [42001-214]
-2022-12-23 14:42:51 jdbc[3]: exception
+2022-12-27 10:26:30 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "create table [*]user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id))"; erwartet "identifier"
 Syntax error in SQL statement "create table [*]user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id))"; expected "identifier"; SQL statement:
 create table user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id)) [42001-214]
-2022-12-23 14:42:51 jdbc[3]: exception
+2022-12-27 10:26:30 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "create table vehicle (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; erwartet "identifier"
 Syntax error in SQL statement "create table vehicle (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; expected "identifier"; SQL statement:
 create table vehicle (id bigint not null, model varchar(255), type varchar(255), year integer, transport_company_id bigint, primary key (id)) [42001-214]
-2022-12-23 14:42:51 jdbc[3]: exception
+2022-12-27 10:26:30 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "VEHICLE" nicht gefunden
 Table "VEHICLE" not found; SQL statement:
 alter table vehicle add constraint FKqfsshrqnpenwm9bmpv2im1l98 foreign key (transport_company_id) references transport_company [42102-214]
-2022-12-23 14:44:03 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "drop table if exists [*]user CASCADE "; erwartet "identifier"
-Syntax error in SQL statement "drop table if exists [*]user CASCADE "; expected "identifier"; SQL statement:
-drop table if exists user CASCADE  [42001-214]
-2022-12-23 14:44:03 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "drop table if exists [*]user CASCADE "; erwartet "identifier"
-Syntax error in SQL statement "drop table if exists [*]user CASCADE "; expected "identifier"; SQL statement:
-drop table if exists user CASCADE  [42001-214]
-2022-12-23 14:44:03 jdbc[13]: exception
+2022-12-27 10:30:08 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "create table [*]user (id integer not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id))"; erwartet "identifier"
+Syntax error in SQL statement "create table [*]user (id integer not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table user (id integer not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id)) [42001-214]
+2022-12-27 10:30:08 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "create table vehicle (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; erwartet "identifier"
+Syntax error in SQL statement "create table vehicle (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; expected "identifier"; SQL statement:
+create table vehicle (id bigint not null, model varchar(255), type varchar(255), year integer, transport_company_id bigint, primary key (id)) [42001-214]
+2022-12-27 10:30:08 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "VEHICLE" nicht gefunden
+Table "VEHICLE" not found; SQL statement:
+alter table vehicle add constraint FKqfsshrqnpenwm9bmpv2im1l98 foreign key (transport_company_id) references transport_company [42102-214]
+2022-12-27 10:30:15 jdbc[23]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "create table [*]user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id))"; erwartet "identifier"
 Syntax error in SQL statement "create table [*]user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id))"; expected "identifier"; SQL statement:
 create table user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id)) [42001-214]
-2022-12-23 14:44:03 jdbc[13]: exception
+2022-12-27 10:30:15 jdbc[23]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "create table vehicle (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; erwartet "identifier"
 Syntax error in SQL statement "create table vehicle (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; expected "identifier"; SQL statement:
 create table vehicle (id bigint not null, model varchar(255), type varchar(255), year integer, transport_company_id bigint, primary key (id)) [42001-214]
-2022-12-23 14:44:03 jdbc[13]: exception
+2022-12-27 10:30:15 jdbc[23]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "VEHICLE" nicht gefunden
 Table "VEHICLE" not found; SQL statement:
 alter table vehicle add constraint FKqfsshrqnpenwm9bmpv2im1l98 foreign key (transport_company_id) references transport_company [42102-214]
-2022-12-23 14:44:15 jdbc[13]: exception
+2022-12-27 10:35:20 jdbc[33]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "drop table if exists [*]user CASCADE "; erwartet "identifier"
 Syntax error in SQL statement "drop table if exists [*]user CASCADE "; expected "identifier"; SQL statement:
 drop table if exists user CASCADE  [42001-214]
-2022-12-23 14:44:23 jdbc[25]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "drop table if exists [*]user CASCADE "; erwartet "identifier"
-Syntax error in SQL statement "drop table if exists [*]user CASCADE "; expected "identifier"; SQL statement:
-drop table if exists user CASCADE  [42001-214]
-2022-12-23 14:44:23 jdbc[25]: exception
+2022-12-27 10:35:20 jdbc[33]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "create table [*]user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id))"; erwartet "identifier"
 Syntax error in SQL statement "create table [*]user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id))"; expected "identifier"; SQL statement:
 create table user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id)) [42001-214]
-2022-12-23 14:44:23 jdbc[25]: exception
+2022-12-27 10:35:20 jdbc[33]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "create table vehicle (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; erwartet "identifier"
 Syntax error in SQL statement "create table vehicle (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; expected "identifier"; SQL statement:
 create table vehicle (id bigint not null, model varchar(255), type varchar(255), year integer, transport_company_id bigint, primary key (id)) [42001-214]
-2022-12-23 14:44:23 jdbc[25]: exception
+2022-12-27 10:35:20 jdbc[33]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "VEHICLE" nicht gefunden
 Table "VEHICLE" not found; SQL statement:
 alter table vehicle add constraint FKqfsshrqnpenwm9bmpv2im1l98 foreign key (transport_company_id) references transport_company [42102-214]
-2022-12-23 14:44:24 jdbc[25]: exception
+2022-12-27 10:35:35 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "drop table if exists [*]user CASCADE "; erwartet "identifier"
 Syntax error in SQL statement "drop table if exists [*]user CASCADE "; expected "identifier"; SQL statement:
 drop table if exists user CASCADE  [42001-214]
-2022-12-23 14:44:25 jdbc[35]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "drop table if exists [*]user CASCADE "; erwartet "identifier"
-Syntax error in SQL statement "drop table if exists [*]user CASCADE "; expected "identifier"; SQL statement:
-drop table if exists user CASCADE  [42001-214]
-2022-12-23 14:44:25 jdbc[35]: exception
+2022-12-27 10:35:35 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "create table [*]user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id))"; erwartet "identifier"
 Syntax error in SQL statement "create table [*]user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id))"; expected "identifier"; SQL statement:
 create table user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id)) [42001-214]
-2022-12-23 14:44:25 jdbc[35]: exception
+2022-12-27 10:35:35 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "create table vehicle (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; erwartet "identifier"
 Syntax error in SQL statement "create table vehicle (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; expected "identifier"; SQL statement:
 create table vehicle (id bigint not null, model varchar(255), type varchar(255), year integer, transport_company_id bigint, primary key (id)) [42001-214]
-2022-12-23 14:44:25 jdbc[35]: exception
+2022-12-27 10:35:35 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "VEHICLE" nicht gefunden
 Table "VEHICLE" not found; SQL statement:
 alter table vehicle add constraint FKqfsshrqnpenwm9bmpv2im1l98 foreign key (transport_company_id) references transport_company [42102-214]
-2022-12-23 14:44:26 jdbc[35]: exception
+2022-12-27 11:28:11 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "drop table if exists [*]user CASCADE "; erwartet "identifier"
 Syntax error in SQL statement "drop table if exists [*]user CASCADE "; expected "identifier"; SQL statement:
 drop table if exists user CASCADE  [42001-214]
-2022-12-23 14:44:27 jdbc[45]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "drop table if exists [*]user CASCADE "; erwartet "identifier"
-Syntax error in SQL statement "drop table if exists [*]user CASCADE "; expected "identifier"; SQL statement:
-drop table if exists user CASCADE  [42001-214]
-2022-12-23 14:44:27 jdbc[45]: exception
+2022-12-27 11:28:12 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "create table [*]user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id))"; erwartet "identifier"
 Syntax error in SQL statement "create table [*]user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id))"; expected "identifier"; SQL statement:
 create table user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id)) [42001-214]
-2022-12-23 14:44:27 jdbc[45]: exception
+2022-12-27 11:28:12 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "create table vehicle (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; erwartet "identifier"
 Syntax error in SQL statement "create table vehicle (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; expected "identifier"; SQL statement:
 create table vehicle (id bigint not null, model varchar(255), type varchar(255), year integer, transport_company_id bigint, primary key (id)) [42001-214]
-2022-12-23 14:44:27 jdbc[45]: exception
+2022-12-27 11:28:12 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "VEHICLE" nicht gefunden
 Table "VEHICLE" not found; SQL statement:
 alter table vehicle add constraint FKqfsshrqnpenwm9bmpv2im1l98 foreign key (transport_company_id) references transport_company [42102-214]
-2022-12-23 14:44:31 jdbc[45]: exception
+2022-12-27 11:33:29 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "drop table if exists [*]user CASCADE "; erwartet "identifier"
 Syntax error in SQL statement "drop table if exists [*]user CASCADE "; expected "identifier"; SQL statement:
 drop table if exists user CASCADE  [42001-214]
-2022-12-23 14:44:32 jdbc[55]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "drop table if exists [*]user CASCADE "; erwartet "identifier"
-Syntax error in SQL statement "drop table if exists [*]user CASCADE "; expected "identifier"; SQL statement:
-drop table if exists user CASCADE  [42001-214]
-2022-12-23 14:44:32 jdbc[55]: exception
+2022-12-27 11:44:05 jdbc[14]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "create table [*]user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id))"; erwartet "identifier"
 Syntax error in SQL statement "create table [*]user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id))"; expected "identifier"; SQL statement:
 create table user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id)) [42001-214]
-2022-12-23 14:44:32 jdbc[55]: exception
+2022-12-27 11:44:05 jdbc[14]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "create table vehicle (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; erwartet "identifier"
 Syntax error in SQL statement "create table vehicle (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; expected "identifier"; SQL statement:
 create table vehicle (id bigint not null, model varchar(255), type varchar(255), year integer, transport_company_id bigint, primary key (id)) [42001-214]
-2022-12-23 14:44:32 jdbc[55]: exception
+2022-12-27 11:44:05 jdbc[14]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "VEHICLE" nicht gefunden
 Table "VEHICLE" not found; SQL statement:
 alter table vehicle add constraint FKqfsshrqnpenwm9bmpv2im1l98 foreign key (transport_company_id) references transport_company [42102-214]
-2022-12-23 14:44:43 jdbc[55]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "drop table if exists [*]user CASCADE "; erwartet "identifier"
-Syntax error in SQL statement "drop table if exists [*]user CASCADE "; expected "identifier"; SQL statement:
-drop table if exists user CASCADE  [42001-214]
-2022-12-23 14:44:48 jdbc[66]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "drop table if exists [*]user CASCADE "; erwartet "identifier"
-Syntax error in SQL statement "drop table if exists [*]user CASCADE "; expected "identifier"; SQL statement:
-drop table if exists user CASCADE  [42001-214]
-2022-12-23 14:44:48 jdbc[66]: exception
+2022-12-27 11:44:08 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "create table [*]user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id))"; erwartet "identifier"
 Syntax error in SQL statement "create table [*]user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id))"; expected "identifier"; SQL statement:
 create table user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id)) [42001-214]
-2022-12-23 14:44:48 jdbc[66]: exception
+2022-12-27 11:44:08 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "create table vehicle (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; erwartet "identifier"
 Syntax error in SQL statement "create table vehicle (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; expected "identifier"; SQL statement:
 create table vehicle (id bigint not null, model varchar(255), type varchar(255), year integer, transport_company_id bigint, primary key (id)) [42001-214]
-2022-12-23 14:44:48 jdbc[66]: exception
+2022-12-27 11:44:08 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "VEHICLE" nicht gefunden
 Table "VEHICLE" not found; SQL statement:
 alter table vehicle add constraint FKqfsshrqnpenwm9bmpv2im1l98 foreign key (transport_company_id) references transport_company [42102-214]
-2022-12-23 14:44:56 jdbc[66]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "drop table if exists [*]user CASCADE "; erwartet "identifier"
-Syntax error in SQL statement "drop table if exists [*]user CASCADE "; expected "identifier"; SQL statement:
-drop table if exists user CASCADE  [42001-214]
-2022-12-23 14:44:56 jdbc[76]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "drop table if exists [*]user CASCADE "; erwartet "identifier"
-Syntax error in SQL statement "drop table if exists [*]user CASCADE "; expected "identifier"; SQL statement:
-drop table if exists user CASCADE  [42001-214]
-2022-12-23 14:44:56 jdbc[76]: exception
+2022-12-27 11:45:09 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "create table [*]user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id))"; erwartet "identifier"
 Syntax error in SQL statement "create table [*]user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id))"; expected "identifier"; SQL statement:
 create table user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id)) [42001-214]
-2022-12-23 14:44:56 jdbc[76]: exception
+2022-12-27 11:45:09 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "create table vehicle (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; erwartet "identifier"
 Syntax error in SQL statement "create table vehicle (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; expected "identifier"; SQL statement:
 create table vehicle (id bigint not null, model varchar(255), type varchar(255), year integer, transport_company_id bigint, primary key (id)) [42001-214]
-2022-12-23 14:44:56 jdbc[76]: exception
+2022-12-27 11:45:09 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "VEHICLE" nicht gefunden
 Table "VEHICLE" not found; SQL statement:
 alter table vehicle add constraint FKqfsshrqnpenwm9bmpv2im1l98 foreign key (transport_company_id) references transport_company [42102-214]
-2022-12-23 14:45:38 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "drop table if exists [*]user CASCADE "; erwartet "identifier"
-Syntax error in SQL statement "drop table if exists [*]user CASCADE "; expected "identifier"; SQL statement:
-drop table if exists user CASCADE  [42001-214]
-2022-12-23 14:45:38 jdbc[3]: exception
+2022-12-27 11:51:39 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "create table [*]user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id))"; erwartet "identifier"
 Syntax error in SQL statement "create table [*]user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id))"; expected "identifier"; SQL statement:
 create table user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id)) [42001-214]
-2022-12-23 14:45:38 jdbc[3]: exception
+2022-12-27 11:51:39 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "create table vehicle (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; erwartet "identifier"
 Syntax error in SQL statement "create table vehicle (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; expected "identifier"; SQL statement:
 create table vehicle (id bigint not null, model varchar(255), type varchar(255), year integer, transport_company_id bigint, primary key (id)) [42001-214]
-2022-12-23 14:45:38 jdbc[3]: exception
+2022-12-27 11:51:39 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "VEHICLE" nicht gefunden
 Table "VEHICLE" not found; SQL statement:
 alter table vehicle add constraint FKqfsshrqnpenwm9bmpv2im1l98 foreign key (transport_company_id) references transport_company [42102-214]
+2022-12-27 11:53:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "drop table if exists [*]user CASCADE "; erwartet "identifier"
+Syntax error in SQL statement "drop table if exists [*]user CASCADE "; expected "identifier"; SQL statement:
+drop table if exists user CASCADE  [42001-214]
+2022-12-27 11:53:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "create table [*]user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id))"; erwartet "identifier"
+Syntax error in SQL statement "create table [*]user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table user (id bigint not null, access_level varchar(255), password varchar(255), username varchar(255), primary key (id)) [42001-214]
+2022-12-27 11:53:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "create table vehicle (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; erwartet "identifier"
+Syntax error in SQL statement "create table vehicle (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; expected "identifier"; SQL statement:
+create table vehicle (id bigint not null, model varchar(255), type varchar(255), year integer, transport_company_id bigint, primary key (id)) [42001-214]
+2022-12-27 11:53:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "VEHICLE" nicht gefunden
+Table "VEHICLE" not found; SQL statement:
+alter table vehicle add constraint FKqfsshrqnpenwm9bmpv2im1l98 foreign key (transport_company_id) references transport_company [42102-214]
+2022-12-27 11:54:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "drop table if exists [*]user CASCADE "; erwartet "identifier"
+Syntax error in SQL statement "drop table if exists [*]user CASCADE "; expected "identifier"; SQL statement:
+drop table if exists user CASCADE  [42001-214]
+2022-12-27 11:54:29 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "create table vehicle (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; erwartet "identifier"
+Syntax error in SQL statement "create table vehicle (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; expected "identifier"; SQL statement:
+create table vehicle (id bigint not null, model varchar(255), type varchar(255), year integer, transport_company_id bigint, primary key (id)) [42001-214]
+2022-12-27 11:54:29 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "VEHICLE" nicht gefunden
+Table "VEHICLE" not found; SQL statement:
+alter table vehicle add constraint FKqfsshrqnpenwm9bmpv2im1l98 foreign key (transport_company_id) references transport_company [42102-214]
+2022-12-27 11:54:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "create table vehicle (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; erwartet "identifier"
+Syntax error in SQL statement "create table vehicle (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; expected "identifier"; SQL statement:
+create table vehicle (id bigint not null, model varchar(255), type varchar(255), year integer, transport_company_id bigint, primary key (id)) [42001-214]
+2022-12-27 11:54:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "VEHICLE" nicht gefunden
+Table "VEHICLE" not found; SQL statement:
+alter table vehicle add constraint FKqfsshrqnpenwm9bmpv2im1l98 foreign key (transport_company_id) references transport_company [42102-214]
+2022-12-27 11:54:58 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "create table vehicles (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; erwartet "identifier"
+Syntax error in SQL statement "create table vehicles (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; expected "identifier"; SQL statement:
+create table vehicles (id bigint not null, model varchar(255), type varchar(255), year integer, transport_company_id bigint, primary key (id)) [42001-214]
+2022-12-27 11:54:58 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "VEHICLES" nicht gefunden
+Table "VEHICLES" not found; SQL statement:
+alter table vehicles add constraint FKq4vlufe27t01lrm9cijhi1d3e foreign key (transport_company_id) references transport_company [42102-214]
+2022-12-27 11:55:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "create table vehicles (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; erwartet "identifier"
+Syntax error in SQL statement "create table vehicles (id bigint not null, model varchar(255), type varchar(255), [*]year integer, transport_company_id bigint, primary key (id))"; expected "identifier"; SQL statement:
+create table vehicles (id bigint not null, model varchar(255), type varchar(255), year integer, transport_company_id bigint, primary key (id)) [42001-214]
+2022-12-27 11:55:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "VEHICLES" nicht gefunden
+Table "VEHICLES" not found; SQL statement:
+alter table vehicles add constraint FKq4vlufe27t01lrm9cijhi1d3e foreign key (transport_company_id) references transport_company [42102-214]

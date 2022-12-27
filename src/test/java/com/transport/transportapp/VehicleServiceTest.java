@@ -17,8 +17,12 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @RunWith(MockitoJUnitRunner.class)
 public class VehicleServiceTest {
+    private static final Logger logger = LoggerFactory.getLogger(VehicleServiceTest.class);
     @Mock
     private VehicleRepository vehicleRepository;
 
@@ -33,6 +37,7 @@ public class VehicleServiceTest {
         Vehicle retrievedVehicle = vehicleService.createVehicle(vehicle);
         assertEquals(vehicle, retrievedVehicle);
         verify(vehicleRepository).save(vehicle);
+        logger.info("Vehicle created: " + vehicle);
     }
 
     @Test
@@ -43,6 +48,7 @@ public class VehicleServiceTest {
         Vehicle retrievedVehicle = vehicleService.getVehicleById(1L);
         assertEquals(vehicle, retrievedVehicle);
         verify(vehicleRepository).findById(1L);
+        logger.info("Vehicle retrieved: " + vehicle);
     }
 
     @Test
@@ -53,11 +59,13 @@ public class VehicleServiceTest {
         Vehicle updatedVehicle = vehicleService.updateVehicle(vehicle);
         assertEquals(vehicle, updatedVehicle);
         verify(vehicleRepository).save(vehicle);
+        logger.info("Vehicle updated: " + vehicle);
     }
 
     @Test
     public void testDeleteVehicle() {
         vehicleService.deleteVehicle(1L);
         verify(vehicleRepository).deleteById(1L);
+        logger.info("Vehicle deleted: " + 1L);
     }
 }

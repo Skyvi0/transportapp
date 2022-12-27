@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+
 
 @Entity
 public class Vehicle {
@@ -14,7 +14,6 @@ public class Vehicle {
     private Long id;
     private String type;
     private String model;
-    private Integer year;
     @ManyToOne
     private TransportCompany transportCompany;
 
@@ -40,12 +39,6 @@ public class Vehicle {
     }
     public void setModel(String model) {
         this.model = model;
-    }
-    public Integer getYear() {
-        return year;
-    }
-    public void setYear(Integer year) {
-        this.year = year;
     }
     public TransportCompany getTransportCompany() {
         return transportCompany;
