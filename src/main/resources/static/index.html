@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Transport App</title>
-</head>
-<body>
-    <h1>Willkommen bei der Transport App</h1>
-    <p>Mit dieser App können Sie Transportaufträge erstellen und verfolgen, Fahrzeuge und Fahrer verwalten und Benutzer hinzufügen und löschen.</p>
-    <h2>Funktionen:</h2>
-    <ul>
-        <li>Erstellen und Verfolgen von Transportaufträgen</li>
-        <li>Verwalten von Fahrzeugen und Fahrern</li>
-        <li>Hinzufügen und Löschen von Benutzern</li>
-    </ul>
-    <button id="click">clicky</button>
-</body>
-</html>
-
+<template>
+    <form @submit.prevent="login">
+      <label for="username">Username:</label>
+      <input type="text" v-model="username" id="username" />
+      <br />
+      <label for="password">Password:</label>
+      <input type="password" v-model="password" id="password" />
+      <br />
+      <button type="submit">Anmelden</button>
+    </form>
+  </template>
+  
