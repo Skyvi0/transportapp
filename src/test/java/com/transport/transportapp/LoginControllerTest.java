@@ -32,7 +32,7 @@ class LoginControllerTest {
     @Test
     void testSuccessfulLogin() {
         // Set up mock user service to return a valid user
-        when(userService.findByUsernameAndPassword("testuser", "testpassword")).thenReturn(new User());
+        when(userService.login("testuser", "testpassword")).thenReturn(new User());
 
         // Send login request to controller
         LoginRequest loginRequest = new LoginRequest("testuser", "testpassword");
@@ -40,13 +40,13 @@ class LoginControllerTest {
 
         // Verify that the response is successful
         assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals("Login successful", response.getBody());
+        assertEquals("Logged in successfully.", response.getBody());
     }
 
     @Test
     void testFailedLogin() {
         // Set up mock user service to return null (no user found)
-        when(userService.findByUsernameAndPassword("user", "password")).thenReturn(null);
+        when(userService.login("user", "password")).thenReturn(null);
 
         // Send login request to controller
         LoginRequest loginRequest = new LoginRequest("user", "password");
