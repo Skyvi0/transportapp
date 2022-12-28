@@ -21,14 +21,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/public/**").permitAll()
-                .anyRequest().authenticated()
+                .antMatchers("/public/").permitAll() // allow access to /public/ for anyone
+                .anyRequest().authenticated() // require authentication for any other path
                 .and()
-                .formLogin()
-                .loginPage("/login")
-                .permitAll()
+                .formLogin() // enable form-based login
+                .loginPage("/login") // specify the login page
+                .permitAll() // allow access to the login page for anyone
                 .and()
-                .logout()
-                .permitAll();
+                .logout() // enable logout
+                .permitAll(); // allow anyone to log out
     }
 }

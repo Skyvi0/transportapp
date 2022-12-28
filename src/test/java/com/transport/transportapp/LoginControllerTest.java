@@ -32,10 +32,10 @@ class LoginControllerTest {
     @Test
     void testSuccessfulLogin() {
         // Set up mock user service to return a valid user
-        when(userService.findByUsernameAndPassword("user", "password")).thenReturn(new User());
+        when(userService.findByUsernameAndPassword("testuser", "testpassword")).thenReturn(new User());
 
         // Send login request to controller
-        LoginRequest loginRequest = new LoginRequest("user", "password");
+        LoginRequest loginRequest = new LoginRequest("testuser", "testpassword");
         ResponseEntity<String> response = loginController.login(loginRequest);
 
         // Verify that the response is successful
