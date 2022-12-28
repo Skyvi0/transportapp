@@ -30,4 +30,12 @@ public class UserService {
     public Iterable<User> getAllUsers() {
         return userRepository.findAll();
     }
+
+    public User login(String username, String password) {
+        return null;
+    }
+
+    public Object findByUsernameAndPassword(String string, String string2) {
+        return null;
+    }
 }
