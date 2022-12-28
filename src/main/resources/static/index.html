@@ -1,39 +1,5 @@
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="/path/to/login.js"></script>
-
-
 <template>
-  <form @submit.prevent="login">
-    <label>Username:</label>
-    <input v-model="username" type="text" />
-    <br />
-    <label>Password:</label>
-    <input v-model="password" type="password" />
-    <br />
-    <button type="submit">Login</button>
-  </form>
+  <div id="app">
+    <login-form />
+  </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      username: "",
-      password: "",
-    };
-  },
-  methods: {
-    async login() {
-try {
-const response = await axios.post("/api/login", {
-username: this.username,
-password: this.password
-});
-    // Verarbeiten Sie die Antwort von der API, z.B. indem Sie das Token speichern
-} catch (error) {
-  // Behandeln Sie Fehler, die von der API zurückgegeben werden
-}
-    }
-  }
-};
-</script>
