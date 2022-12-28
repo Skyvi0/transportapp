@@ -50,8 +50,8 @@ public class UserService {
     }
 
     public User login(String username, String password) {
-        // Find the user with the given username
-        User user = userRepository.findByUsername(username);
+        // Find the user with the given username and password
+        User user = userRepository.findByUsernameAndPassword(username, password);
         // If no user was found, return null
         if (user == null) {
             return null;
@@ -61,10 +61,6 @@ public class UserService {
             return user;
         }
         // If the password doesn't match, return null
-        return null;
-    }
-
-    public Object findByUsernameAndPassword(String string, String string2) {
         return null;
     }
 }
