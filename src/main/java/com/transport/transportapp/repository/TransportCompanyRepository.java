@@ -7,4 +7,7 @@ import com.transport.transportapp.entity.TransportCompany;
 
 @Repository
 public interface TransportCompanyRepository extends JpaRepository<TransportCompany, Long> {
+    boolean existsByName(String name);
+
+    TransportCompany findByName(String name);
 }
