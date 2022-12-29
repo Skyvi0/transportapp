@@ -3,22 +3,40 @@ package com.transport.transportapp;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Properties;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+
+import oracle.jdbc.dcn.DatabaseChangeRegistration;
+
 import static org.junit.jupiter.api.Assertions.fail;
 
 public class DatabaseConnectionTest {
+
+    // private static final Properties props = new Properties();
     private static final String DB_URL = "jdbc:oracle:thin:@localhost:1521/XEPDB1";
     private static final String DB_USER = "testuser";
     private static final String DB_PASSWORD = "testpassword";
+    /*
+     * static {
+     * try {
+     * props.load(DatabaseChangeRegistration.class.getResourceAsStream(
+     * "/application.properties"));
+     * } catch (IOException e) {
+     * // Fehlerbehandlung
+     * }
+     * }
+     */ // future use for properties file with database connection details (url, user,
+        // password)
 
     @BeforeAll
     public static void setUp() {
