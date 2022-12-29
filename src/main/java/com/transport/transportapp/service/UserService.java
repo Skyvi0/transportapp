@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import com.transport.transportapp.entity.User;
 import com.transport.transportapp.repository.UserRepository;
-import org.springframework.stereotype.Service;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Service

@@ -50,7 +50,7 @@ class TransportOrderServiceTest {
         transportOrder.setSender("Alice");
         transportOrder.setRecipient("Bob");
         transportOrder.setGoods("Books");
-       transportOrder.setTransportTime(transportTime);
+        transportOrder.setTransportTime(transportTime);
         assertEquals(transportTime, transportOrder.getTransportTime());
 
         when(transportOrderRepository.findById(1L)).thenReturn(java.util.Optional.of(transportOrder));
@@ -61,7 +61,8 @@ class TransportOrderServiceTest {
         assertEquals("Bob", retrievedTransportOrder.getRecipient());
         assertEquals("Books", retrievedTransportOrder.getGoods());
         assertEquals(transportTime, retrievedTransportOrder.getTransportTime());
-        //assertEquals(new Date(), retrievedTransportOrder.getTransportTime()); Broken test
+        // assertEquals(new Date(), retrievedTransportOrder.getTransportTime()); Broken
+        // test
     }
 
     @Test
@@ -79,11 +80,13 @@ class TransportOrderServiceTest {
         assertEquals(1L, updatedTransportOrder.getId());
     }
 
-        @Test
-        void testDeleteTransportOrder() {
-            transportOrderService.deleteTransportOrder(1L);
-            verify(transportOrderRepository).deleteById(1L);
-            // We can't verify that the delete operation was successful, since the method returns void
-            // Instead, we can just make sure that the repository's deleteById method was called with the correct ID
-        }
+    @Test
+    void testDeleteTransportOrder() {
+        transportOrderService.deleteTransportOrder(1L);
+        verify(transportOrderRepository).deleteById(1L);
+        // We can't verify that the delete operation was successful, since the method
+        // returns void
+        // Instead, we can just make sure that the repository's deleteById method was
+        // called with the correct ID
     }
+}
