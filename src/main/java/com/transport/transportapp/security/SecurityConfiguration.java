@@ -21,7 +21,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/public/").permitAll() // allow access to /public/ for anyone
+                .antMatchers("/public/**").permitAll() // allow access to /public/** for anyone
                 .anyRequest().authenticated() // require authentication for any other path
                 .and()
                 .formLogin() // enable form-based login
