@@ -21,9 +21,10 @@ public class User {
     private String accessLevel;
     private String username;
     private String password;
+    private Role role;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Role role;
 
     // Getter- und Setter-Methoden für die Felder
     public Long getId() {

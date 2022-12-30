@@ -28,11 +28,12 @@ public class UserController {
         if (userRepository.existsByUsername(signupRequest.getUsername())) {
             return ResponseEntity.badRequest().body("Username is already taken.");
         }
-
         User user = new User();
         user.setUsername(signupRequest.getUsername());
         user.setPassword(passwordEncoder.encode(signupRequest.getPassword()));
-        user.setRole(Role.ROLE_USER);
+        Role role = new Role();
+        role.setName("USER");
+        user.setRole(role);
         userRepository.save(user);
 
         return ResponseEntity.ok("User registered successfully.");
