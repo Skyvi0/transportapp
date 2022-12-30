@@ -19,6 +19,8 @@ import com.transport.transportapp.service.UserService;
 @RestController
 @RequestMapping("/users")
 public class UserController {
+    String username = "testUser";
+    String password = "testPassword";
 
     @Autowired
     private UserRepository userRepository;

@@ -16,9 +16,12 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class DriverServiceTest {
-    //This test case verifies that the createDriver, getDriverById, updateDriver, and deleteDriver methods of the DriverService class
-    // are working as expected. It does this by using Mockito to mock the DriverRepository and setting up certain return values or behaviors
-    // for the repository methods that are called by the service methods. Then, it calls the service methods and verifies that they return the
+    // This test case verifies that the createDriver, getDriverById, updateDriver,
+    // and deleteDriver methods of the DriverService class
+    // are working as expected. It does this by using Mockito to mock the
+    // DriverRepository and setting up certain return values or behaviors
+    // for the repository methods that are called by the service methods. Then, it
+    // calls the service methods and verifies that they return the
     // expected values or perform the expected actions.
     @Mock
     private DriverRepository driverRepository;
@@ -85,8 +88,10 @@ class DriverServiceTest {
 
         driverService.deleteDriver(1L);
         verify(driverRepository).deleteById(1L);
-        
-        // We can't verify that the delete operation was successful, since the method returns void
-        // Instead, we can just make sure that the repository's deleteById method was called with the correct ID
+
+        // We can't verify that the delete operation was successful, since the method
+        // returns void
+        // Instead, we can just make sure that the repository's deleteById method was
+        // called with the correct ID
     }
 }

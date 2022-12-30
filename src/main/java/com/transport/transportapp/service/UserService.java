@@ -19,16 +19,7 @@ public class UserService {
     }
 
     public User createUser(User user) {
-        // Validate the user input, e.g. check for required fields
-
-        // Validate the user input, e.g. check for required fields
-        if (user.getUsername() == null || user.getPassword() == null) {
-            throw new IllegalArgumentException("Username and password are required.");
-        }
-        // Hash the password and set it on the user object
-        String hashedPassword = passwordEncoder.encode(user.getPassword());
-        user.setPassword(hashedPassword);
-        // Save the user to the database
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
 
@@ -49,8 +40,8 @@ public class UserService {
     }
 
     public User login(String username, String password) {
-        // Find the user with the given username and password
-        User user = userRepository.findByUsernameAndPassword(username, password);
+        // Find the user with the given username
+        User user = userRepository.findByUsername(username);
         // If no user was found, return null
         if (user == null) {
             return null;
