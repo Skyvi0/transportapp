@@ -10,7 +10,8 @@ public class Role implements GrantedAuthority, Serializable {
     private String name;
 
     public Role() {
-        // no-arg constructor
+        // Der no-arg Konstruktor wird für das serialisieren benötigt, damit das Objekt
+        // wiederhergestellt werden kann.
     }
 
     public String getName() {
