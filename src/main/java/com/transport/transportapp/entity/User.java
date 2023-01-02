@@ -1,32 +1,26 @@
 package com.transport.transportapp.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-import com.transport.transportapp.entity.UserSignupRequest;
-import org.springframework.security.core.GrantedAuthority;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String accessLevel;
+    @Column(unique = true, nullable = false)
     private String username;
+
+    @Column(nullable = false)
     private String password;
+
+    @Column
+    private String accessLevel;
+
+    @ManyToOne
+    @JoinColumn(name = "role_id")
     private Role role;
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-
-    // Getter- und Setter-Methoden für die Felder
     public Long getId() {
         return id;
     }
