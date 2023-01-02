@@ -7,9 +7,9 @@ import com.transport.transportapp.entity.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    boolean existsByUsername(String username);
+    User findByUsername(String username);
 
     User findByUsernameAndPassword(String username, String password);
 
-    User findByUsername(String username);
+    boolean existsByUsername(String username);
 }
