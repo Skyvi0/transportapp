@@ -1,9 +1,12 @@
 package com.transport.transportapp.controller;
 
 import com.transport.transportapp.entity.User;
+import com.transport.transportapp.security.JwtTokenProvider;
 import com.transport.transportapp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import com.transport.transportapp.security.AuthenticationResponse;
 
 @RestController
 @RequestMapping("/users")
@@ -38,8 +41,17 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public User login(@RequestBody User loginUser) {
-        return userService.login(loginUser.getUsername(), loginUser.getPassword());
+    public ResponseEntity<?> login(@RequestBody User loginUser) {
+        // Prüfe, ob der Benutzername und das Passwort korrekt sind
+        User user = userService.findByUsernameAndPassword(loginUser.getUsername(), loginUser.getPassword());
+        if (user == null) {
+            return ResponseEntity.badRequest().body("Benutzername oder Passwort ist falsch");
+        }
+        // Erstelle ein JWT-Token für den Benutzer
+        JwtTokenProvider jwtTokenProvider = new JwtTokenProvider();
+        String token = jwtTokenProvider.createToken(user.getUsername());
+        // Gib das Token zurück
+        return ResponseEntity.ok(new AuthenticationResponse(token));
     }
 
     @GetMapping("/existsByUsername/{username}")
