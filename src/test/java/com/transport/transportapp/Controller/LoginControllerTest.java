@@ -1,4 +1,4 @@
-package com.transport.transportapp;
+package com.transport.transportapp.Controller;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;

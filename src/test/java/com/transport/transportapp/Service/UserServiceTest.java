@@ -1,4 +1,4 @@
-package com.transport.transportapp;
+package com.transport.transportapp.Service;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

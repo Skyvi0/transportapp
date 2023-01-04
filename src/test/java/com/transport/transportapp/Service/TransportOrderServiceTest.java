@@ -1,4 +1,4 @@
-package com.transport.transportapp;
+package com.transport.transportapp.Service;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
