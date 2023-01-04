@@ -1,4 +1,4 @@
-package com.transport.transportapp;
+package com.transport.transportapp.Database;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;

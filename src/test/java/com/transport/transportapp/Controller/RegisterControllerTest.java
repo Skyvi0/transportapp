@@ -1,4 +1,4 @@
-package com.transport.transportapp;
+package com.transport.transportapp.Controller;
 
 import org.junit.Before;
 import org.junit.Test;

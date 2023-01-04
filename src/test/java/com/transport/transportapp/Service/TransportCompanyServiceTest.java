@@ -1,4 +1,4 @@
-package com.transport.transportapp;
+package com.transport.transportapp.Service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.doNothing;
